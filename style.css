@@ -7,6 +7,12 @@
     padding: 5rem 0;
     background-color: #B9D6C8;
 }
+.jumbo3{
+	background-image: url(assets/bg.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
 #cabe1{
     width: 100%;
 }
@@ -17,7 +23,11 @@
     border: 1px solid
 } */
 h2{
-    color: #E1CACA
+    color: #E1CACA;
+}
+h3{
+    font-weight: bold;
+    text-align: center;
 }
 p{
     color: #E1CACA;
@@ -42,4 +52,24 @@ content article {
 .btn{
     border-color: none;
     background-color:#D1909C;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.card img{
+    width: 80%;
+    border-radius: 50%;
+}
+.card{
+    place-items: center;
+    background-color:#3A595C;
+    color:#E1CACA;
+}
+footer{
+	padding: 20px;
+	color: white;
+	background-color: #3A595C;
+	text-align: center;
+	font-weight: bold;
 }
