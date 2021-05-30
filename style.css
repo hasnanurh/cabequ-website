@@ -2,11 +2,15 @@
     padding: 5rem 2rem;
     background-color: #3A595C;
 }
+.jumbo2{
+    padding: 5rem 0;
+    background-color: #B9D6C8;
+}
 #cabe1{
     width: 100%;
 }
-#cabe2{
-    width: 60%;
+.dok{
+    width: 80%;
 }
 /* .col{
     border: 1px solid
@@ -16,4 +20,7 @@ h2{
 }
 p{
     color: #E1CACA;
+}
+.ket p{
+    color:black;
 }
