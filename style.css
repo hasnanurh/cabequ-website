@@ -1,5 +1,4 @@
 .jumbotron{
-    border: 1px solid;
     padding: 2rem;
     background-color: #3A595C;
 }
@@ -56,6 +55,8 @@ content article {
 .container{
     display: flex;
     justify-content: space-between;
+    /* flex-direction: column; */
+    
 }
 .card img{
     width: 80%;
