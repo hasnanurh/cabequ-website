@@ -12,10 +12,45 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/diagnosis.css" />
 
+    <!-- JQuery -->
+    <style>
+      /* Paste this css to your style sheet file or under head tag */
+      /* This only works with JavaScript, 
+          if it's not present, don't show loader */
+      .no-js #loader {
+        display: none;
+      }
+      .js #loader {
+        display: block;
+        position: absolute;
+        left: 100px;
+        top: 0;
+      }
+      .se-pre-con {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url(assets/preloader.gif) center no-repeat #fff;
+      }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <script>
+      // Wait for window load
+      $(window).load(function () {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");
+      });
+    </script>
+
     <title>CABEQU</title>
     <link rel="icon" href="assets/logo2.png" />
   </head>
   <body>
+    <div class="se-pre-con"></div>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #3a595c">
       <div class="container">
         <a class="navbar-brand" href="#">
@@ -42,44 +77,45 @@
 
     <!-- Judul -->
 
-    <div class="modal-body" style="padding: 50px 50px"></div>
+    <div class="modal-body" style="padding: 30px 50px"></div>
 
-    <main class="p-5">
+    <main class="p-5 mt-2">
       <h2 style="color: #000000">Diagnosis Tanaman Cabai</h2>
+      <br />
       <p style="color: #000000">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse id autem minus neque sunt dolore natus officiis quas mollitia veniam. Fugit, nemo corrupti, ipsum, temporibus aut dolor officia doloribus quaerat optio eaque
         exercitationem dolorum at! Aliquam ipsa et earum unde odio voluptates velit, aspernatur, a fugiat laboriosam reprehenderit hic praesentium?
       </p>
-      <div class="feature">
+      <div class="feature mt-5 me-4">
         <div class="leaves">
           <h5>Daun</h5>
           <table class="table ms-2 mt-4">
             <thead>
               <tr>
                 <th scope="col">Ciri Penyakit</th>
-                <th scope="col" style="text-align: center">Checklist</th>
+                <th scope="col" class="text-end">Checklist</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Daun Menguning</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
               <tr>
                 <td>Daun layu</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
               <tr>
                 <td>Terdapat bercak bulat dan kering pada daun</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
               <tr>
                 <td>Daun mengeriting</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
               <tr>
                 <td>Daun keriput</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
             </tbody>
           </table>
@@ -90,29 +126,29 @@
             <thead>
               <tr>
                 <th scope="col">Ciri Penyakit</th>
-                <th scope="col" style="text-align: center">Checklist</th>
+                <th scope="col" class="text-end">Checklist</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Buah kecil</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
               <tr>
                 <td>Buah membusuk</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
               <tr>
                 <td>Buah keriput</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
               <tr>
                 <td>Buah mengering</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
               <tr>
                 <td>Bercak kecil coklat kehitaman pada buah</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
             </tbody>
           </table>
@@ -123,29 +159,29 @@
             <thead>
               <tr>
                 <th scope="col">Ciri Penyakit</th>
-                <th scope="col" style="text-align: center">Checklist</th>
+                <th scope="col" class="text-end">Checklist</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Buah kecil</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td>Terdapat bercak pada batang</td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
               <tr>
-                <td>Buah membusuk</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td>Warna jaringan batang coklat</td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
               <tr>
-                <td>Buah keriput</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td>Jaringan sekuler bawah batang kecoklatan</td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
               <tr>
-                <td>Buah mengering</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td>Pucuk tanaman mati</td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
               <tr>
-                <td>Bercak kecil coklat kehitaman pada buah</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td>Tanaman menjadi keriput</td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
             </tbody>
           </table>
@@ -156,29 +192,21 @@
             <thead>
               <tr>
                 <th scope="col">Ciri Penyakit</th>
-                <th scope="col" style="text-align: center">Checklist</th>
+                <th scope="col" class="text-end">Checklist</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Buah kecil</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td>Warna jaringan akar coklat</td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
               <tr>
-                <td>Buah membusuk</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td>Akar membusuk</td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
               <tr>
-                <td>Buah keriput</td>
-                <td class="text-end"><input type="checkbox" /></td>
-              </tr>
-              <tr>
-                <td>Buah mengering</td>
-                <td class="text-end"><input type="checkbox" /></td>
-              </tr>
-              <tr>
-                <td>Bercak kecil coklat kehitaman pada buah</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td>Akar menjadi Kecoklatan</td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
             </tbody>
           </table>
@@ -189,29 +217,17 @@
             <thead>
               <tr>
                 <th scope="col">Ciri Penyakit</th>
-                <th scope="col" style="text-align: center">Checklist</th>
+                <th scope="col" class="text-end">Checklist</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Buah kecil</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td>Bunga dan Bakal buah berguguran</td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
               <tr>
-                <td>Buah membusuk</td>
-                <td class="text-end"><input type="checkbox" /></td>
-              </tr>
-              <tr>
-                <td>Buah keriput</td>
-                <td class="text-end"><input type="checkbox" /></td>
-              </tr>
-              <tr>
-                <td>Buah mengering</td>
-                <td class="text-end"><input type="checkbox" /></td>
-              </tr>
-              <tr>
-                <td>Bercak kecil coklat kehitaman pada buah</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td>Tunas dan bunga gugur</td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
             </tbody>
           </table>
@@ -222,36 +238,24 @@
             <thead>
               <tr>
                 <th scope="col">Ciri Penyakit</th>
-                <th scope="col" style="text-align: center">Checklist</th>
+                <th scope="col" class="text-end">Checklist</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Buah kecil</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td>Biji yang terserang menjadi coklat</td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
               <tr>
-                <td>Buah membusuk</td>
-                <td class="text-end"><input type="checkbox" /></td>
-              </tr>
-              <tr>
-                <td>Buah keriput</td>
-                <td class="text-end"><input type="checkbox" /></td>
-              </tr>
-              <tr>
-                <td>Buah mengering</td>
-                <td class="text-end"><input type="checkbox" /></td>
-              </tr>
-              <tr>
-                <td>Bercak kecil coklat kehitaman pada buah</td>
-                <td class="text-end"><input type="checkbox" /></td>
+                <td>Biji yang terserang menjadi keriput</td>
+                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
       <div class="button mt-5 text-center">
-        <a href="#" class="btn btn-light" role="button" data-bs-toggle="button">CEK PENYAKIT</a>
+        <a class="btn btn-light" href="hasil_diagnosis.html" role="button">CEK PENYAKIT</a>
       </div>
     </main>
 
