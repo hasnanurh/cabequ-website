@@ -102,5 +102,11 @@ footer{
 }
 /*ukuran mobile*/
 @media screen and (max-width: 576px){
+    .card img{
+        width:50%;
+    }
+    content article {
+        flex-direction: column;
+    }
 
 }
