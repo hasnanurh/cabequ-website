@@ -75,5 +75,14 @@ footer{
 	font-weight: bold;
 }
 .detail{
-    padding-left: 30px;
+    padding-left: 100px;
+}
+
+.detail h5{
+    font-weight: bold; 
+    color: black; 
+    padding-top: 10px;
+}
+.detail p{
+    color: black;
 }
