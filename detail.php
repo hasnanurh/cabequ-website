@@ -87,19 +87,23 @@ $data_penyakit = $conn->query($qpenyakit);
 
   <main>
     <div class="detail">
-      <h3 style="padding-top: 100px; text-align: start">Penyakit <?php echo $value['namapenyakit'] ?></h3>
-      <img src="assets/tanaman1.png" style="width: 30%" />
+      <!-- <h3 style="padding-top: 100px; text-align: start">Penyakit <?php echo $value['namapenyakit'] ?></h3> -->
+      <img src="assets/tanaman1.png" style="width: 40%; padding-top: 100px;" />
       <h5>Nama Latin</h5>
       <p><?php echo $value['namapenyakit'] ?></p>
 
-      <h5>Gejala</h5>
-      <p>Warna jaringan akar coklat, Akar membusuk, Warna jaringan batang coklat, Buah Kecil dan gugur</p>
+      <h5>Kultur Teknis</h5>
+      <p><?php echo $value['kulturteknis'] ?></p>
 
-      <h5>Kultur Tanah</h5>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa sit enim lacinia auctor. Ut dolor eu lorem facilisi pretium ac nunc placerat. Nec tempor arcu sit ipsum, dolor. Pellentesque adipiscing interdum eros maecenas ultrices
-        eget purus sed. Volutpat sit cursus volutpat dolor ut aliquet
-      </p>
+      <h5>Fisik Mekanis</h5>
+      <p><?php echo $value['fisikmekanis'] ?></p>
+
+      <h5>Kimiawi</h5>
+      <p><?php echo $value['kimiawi'] ?></p>
+
+      <h5>hayati</h5>
+      <p><?php echo $value['hayati'] ?></p>
+
     </div>
   </main>
   
