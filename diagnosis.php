@@ -133,7 +133,6 @@ $data_biji = $conn->query($qbiji);
             }
             ?>
 
-
             <!-- <tr>
                 <td>Daun Menguning</td>
                 <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
