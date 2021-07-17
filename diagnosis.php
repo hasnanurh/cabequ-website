@@ -50,7 +50,7 @@
     <div class="se-pre-con"></div>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #3a595c">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
           <img src="assets/logo.png" alt="" width="197" height="54" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,13 +59,13 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="diagnosis.html">Diagnosis</a>
+              <a class="nav-link active" aria-current="page" href="diagnosis.php">Diagnosis</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="about_chili.html">About Chilli</a>
+              <a class="nav-link active" aria-current="page" href="about_chili.php">About Chilli</a>
             </li>
           </ul>
         </div>
@@ -252,7 +252,7 @@
         </div>
       </div>
       <div class="button mt-5 text-center">
-        <a class="btn btn-light" href="hasil_diagnosis.html" role="button">CEK PENYAKIT</a>
+        <a class="btn btn-light" href="hasil_diagnosis.php" role="button">CEK PENYAKIT</a>
       </div>
     </main>
 

@@ -42,7 +42,7 @@
 		  <div class="se-pre-con"></div>
 		  <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #3a595c">
 			<div class="container">
-			  <a class="navbar-brand" href="index.html">
+			  <a class="navbar-brand" href="index.php">
 				<img src="assets/logo.png" alt="" width="197" height="54" />
 			  </a>
 			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,13 +51,13 @@
 			  <div class="collapse navbar-collapse" id="navbarNavDropdown">
 				<ul class="navbar-nav ms-auto">
 				  <li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="index.html">Home</a>
+					<a class="nav-link active" aria-current="page" href="index.php">Home</a>
 				  </li>
 				  <li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="diagnosis.html">Diagnosis</a>
+					<a class="nav-link active" aria-current="page" href="diagnosis.php">Diagnosis</a>
 				  </li>
 				  <li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="about_chili.html">About Chilli</a>
+					<a class="nav-link active" aria-current="page" href="about_chili.php">About Chilli</a>
 				  </li>
 				</ul>
 			  </div>
@@ -100,7 +100,7 @@
 					<td>P001</td>  
         			<td>Penyakit Layu Fusarium (Fusarium oxysporum f. sp. Melongenae Schlecht)</td>  
 					<td>
-						<a href="detail.html">
+						<a href="detail.php">
 							<img src="assets/magnifying.png" style="width: 10%;">
 						</a>
 					</td>
@@ -110,7 +110,7 @@
 					<td>P002</td>  
         			<td>Layu Bakteri (Ralstonia (Pseudomonas solanacearum E.F.Sm)</td>    
 					<td>
-						<a href="detail.html">
+						<a href="detail.php">
 							<img src="assets/magnifying.png" style="width: 10%;">
 						</a>
 					</td>
@@ -120,7 +120,7 @@
 					<td>P003</td>  
         			<td>Bercak Daun Cercospora (Cercospora capsici Heald et Wolf)</td>    
 					<td>
-						<a href="detail.html">
+						<a href="detail.php">
 							<img src="assets/magnifying.png" style="width: 10%;">
 						</a>
 					</td>
@@ -130,7 +130,7 @@
 					<td>P004</td>  
         			<td>Antraknosa/Penyakit Patek (Colletotrichum capsici (Syd.) Bult. Et. Bisby)</td>    
 					<td>
-						<a href="detail.html">
+						<a href="detail.php">
 							<img src="assets/magnifying.png" style="width: 10%;">
 						</a>
 					</td>
@@ -140,7 +140,7 @@
 					<td>P005</td>  
         			<td>Busuk Buah (Fruit rot) </td>    
 					<td>
-						<a href="detail.html">
+						<a href="detail.php">
 							<img src="assets/magnifying.png" style="width: 10%;">
 						</a>
 					</td>
@@ -150,7 +150,7 @@
 					<td>P006</td>  
         			<td>Virus Kerupuk</td>   
 					<td>
-						<a href="detail.html">
+						<a href="detail.php">
 							<img src="assets/magnifying.png" style="width: 10%;">
 						</a>
 					</td> 
@@ -160,7 +160,7 @@
 					<td>P007</td>  
         			<td>Virus Mosaik</td>    
 					<td>
-						<a href="detail.html">
+						<a href="detail.php">
 							<img src="assets/magnifying.png" style="width: 10%;">
 						</a>
 					</td>
@@ -170,7 +170,7 @@
 					<td>P008</td>  
         			<td>Virus Kuning</td>   
 					<td>
-						<a href="detail.html">
+						<a href="detail.php">
 							<img src="assets/magnifying.png" style="width: 10%;">
 						</a>
 					</td> 
@@ -180,7 +180,7 @@
 					<td>P009</td>  
         			<td>Tungau Kuning (Polyphagotarsonemus latus Banks) </td>    
 					<td>
-						<a href="detail.html">
+						<a href="detail.php">
 							<img src="assets/magnifying.png" style="width: 10%;">
 						</a>
 					</td>
@@ -190,7 +190,7 @@
 					<td>P010</td>  
         			<td>Trips (Thrips parvispinus Karny) </td>   
 					<td>
-						<a href="detail.html">
+						<a href="detail.php">
 							<img src="assets/magnifying.png" style="width: 10%;">
 						</a>
 					</td> 
@@ -200,7 +200,7 @@
 					<td>P011</td>  
         			<td>Kutu Daun Persik (Myzus persicae Sulz.)</td>    
 					<td>
-						<a href="detail.html">
+						<a href="detail.php">
 							<img src="assets/magnifying.png" style="width: 10%;">
 						</a>
 					</td>
@@ -210,7 +210,7 @@
 					<td>P012</td>  
         			<td>Kutu Kebul (Bemisia tabaci) </td>    
 					<td>
-						<a href="detail.html">
+						<a href="detail.php">
 							<img src="assets/magnifying.png" style="width: 10%;">
 						</a>
 					</td>
@@ -220,7 +220,7 @@
 					<td>P013</td>  
         			<td>Ulat Grayak (Spodoptera litura F.)</td>    
 					<td>
-						<a href="detail.html">
+						<a href="detail.php">
 							<img src="assets/magnifying.png" style="width: 10%;">
 						</a>
 					</td>
@@ -230,7 +230,7 @@
 					<td>P014</td>  
         			<td>Ulat Buah (Helicoverpa armigera Hubner) </td>    
 					<td>
-						<a href="detail.html">
+						<a href="detail.php">
 							<img src="assets/magnifying.png" style="width: 10%;">
 						</a>
 					</td>
@@ -240,7 +240,7 @@
 					<td>P015</td>  
         			<td>Lalat Buah (Bactrocera sp)</td>    
 					<td>
-						<a href="detail.html">
+						<a href="detail.php">
 							<img src="assets/magnifying.png" style="width: 10%;">
 						</a>
 					</td>

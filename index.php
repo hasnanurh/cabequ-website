@@ -51,7 +51,7 @@
     <header>
       <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #3a595c">
         <div class="container">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <img src="assets/logo.png" alt="" width="197" height="54" />
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,10 +63,10 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="diagnosis.html">Diagnosis</a>
+                <a class="nav-link active" aria-current="page" href="diagnosis.php">Diagnosis</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="about_chili.html">About Chilli</a>
+                <a class="nav-link active" aria-current="page" href="about_chili.php">About Chilli</a>
               </li>
             </ul>
           </div>
@@ -87,7 +87,7 @@
                 </p>
               </div>
               <div class="button">
-                <a class="btn btn-light" href="diagnosis.html" role="button">DIAGNOSIS</a>
+                <a class="btn btn-light" href="diagnosis.php" role="button">DIAGNOSIS</a>
               </div>
             </div>
           </article>
