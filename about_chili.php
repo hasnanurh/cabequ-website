@@ -118,7 +118,7 @@ $data_penyakit = $conn->query($qpenyakit);
 								<td><?php echo $value['idpenyakit'] ?></td>
 								<td><?php echo $value['namapenyakit'] ?></td>
 								<td>
-									<a href="detail.php">
+									<a href="detail.php?idpenyakit=<?php echo $value['idpenyakit'] ?>">
 										<img src="assets/magnifying.png" style="width: 10%;">
 									</a>
 								</td>
