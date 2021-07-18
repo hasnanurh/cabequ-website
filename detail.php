@@ -88,7 +88,7 @@ $data_penyakit = $conn->query($qpenyakit);
   <main>
     <div class="detail">
       <!-- <h3 style="padding-top: 100px; text-align: start">Penyakit <?php echo $value['namapenyakit'] ?></h3> -->
-      <img src="assets/tanaman1.png" style="width: 40%; padding-top: 100px;" />
+      <img src="<?php echo $value['gambarpenyakit'] ?>" style="width: 40%; padding-top: 100px;" />
       <h5>Nama Latin</h5>
       <p><?php echo $value['namapenyakit'] ?></p>
 

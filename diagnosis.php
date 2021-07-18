@@ -18,6 +18,9 @@ $data_bunga = $conn->query($qbunga);
 $qbiji = "select * from gejala where organtanaman = 'Biji'";
 $data_biji = $conn->query($qbiji);
 
+
+var_dump($data_biji);
+
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +77,8 @@ $data_biji = $conn->query($qbiji);
 
 <body>
   <div class="se-pre-con"></div>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #3a595c">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3a595c">
+    <!-- <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #3a595c"> -->
     <div class="container">
       <a class="navbar-brand" href="index.php">
         <img src="assets/logo.png" alt="" width="197" height="54" />
@@ -106,34 +110,63 @@ $data_biji = $conn->query($qbiji);
     <h2 style="color: #000000">Diagnosis Tanaman Cabai</h2>
     <br />
     <p style="color: #000000">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse id autem minus neque sunt dolore natus officiis quas mollitia veniam. Fugit, nemo corrupti, ipsum, temporibus aut dolor officia doloribus quaerat optio eaque
-      exercitationem dolorum at! Aliquam ipsa et earum unde odio voluptates velit, aspernatur, a fugiat laboriosam reprehenderit hic praesentium?
+      Diagnosis adalah identifikasi mengenai sesuatu. Diagnosis digunakan dalam medis, ilmu pengetahuan, teknik, bisnis, dll. Disusun menggunakan Sistem pakar metode forward chaining, Cabequ dapat menentukan kondisi tanaman cabai berdasarkan gejala-gejala yang diinputkan, sebagai dasar pengambilan keputusan medis untuk prognosis dan pengobatan.
     </p>
     <div class="feature mt-5 me-4">
-      <div class="leaves">
-        <h5>Daun</h5>
-        <table class="table ms-2 mt-4">
+      <form id="form2" name="form2" method="post" action="diagnosis.php">
+        <div class="leaves">
+          <h5>Daun</h5>
+          <table class="table ms-2 mt-4">
           <thead>
-            <tr>
-              <th scope="col">Ciri Penyakit</th>
-              <th scope="col" class="text-end">Checklist</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            foreach ($data_daun as $index => $value) {
-            ?>
-
               <tr>
-                <td><?php echo $value['namagejala'] ?></td>
-                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
+                <th scope="col">Ciri Penyakit</th>
+                <th scope="col" class="text-end">Checklist</th>
               </tr>
+            </thead>
+            <tbody>
 
-            <?php
-            }
-            ?>
+              <?php
+              $query = $conn->query($qdaun);
+              while ($hasil = mysqli_fetch_array($query)) {
+              ?>
+                <tr>
+                  <td>
+                    <?php echo "" . $hasil['namagejala'] . "<br>"; ?>
+                  </td>
+                  <td class="text-end">
+                    <?php echo "<input type='checkbox' value='" . $hasil['namagejala'] . "' name='gejala[]' />" ?>
+                  </td>
+                </tr>
 
-            <!-- <tr>
+              <?php
+              }
+              ?>
+            </tbody>
+
+
+
+
+            <!-- <thead>
+              <tr>
+                <th scope="col">Ciri Penyakit</th>
+                <th scope="col" class="text-end">Checklist</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              foreach ($data_daun as $index => $value) {
+              ?>
+
+                <tr>
+                  <td><?php echo $value['namagejala'] ?></td>
+                  <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
+                </tr>
+
+              <?php
+              }
+              ?> -->
+
+              <!-- <tr>
                 <td>Daun Menguning</td>
                 <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr>
@@ -153,32 +186,60 @@ $data_biji = $conn->query($qbiji);
                 <td>Daun keriput</td>
                 <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
               </tr> -->
-          </tbody>
-        </table>
-      </div>
-      <div class="fruits mt-5">
-        <h5>Buah</h5>
-        <table class="table ms-2 mt-4">
+            <!-- </tbody> -->
+          </table>
+        </div>
+        <div class="fruits mt-5">
+          <h5>Buah</h5>
+          <table class="table ms-2 mt-4">
           <thead>
-            <tr>
-              <th scope="col">Ciri Penyakit</th>
-              <th scope="col" class="text-end">Checklist</th>
-            </tr>
-          </thead>
-          <tbody>
-          <?php
-            foreach ($data_buah as $index => $value) {
-            ?>
-
               <tr>
-                <td><?php echo $value['namagejala'] ?></td>
-                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
+                <th scope="col">Ciri Penyakit</th>
+                <th scope="col" class="text-end">Checklist</th>
               </tr>
+            </thead>
+            <tbody>
 
-            <?php
-            }
-            ?>
-            <!-- <tr>
+              <?php
+              $query = $conn->query($qbuah);
+              while ($hasil = mysqli_fetch_array($query)) {
+              ?>
+                <tr>
+                  <td>
+                    <?php echo "" . $hasil['namagejala'] . "<br>"; ?>
+                  </td>
+                  <td class="text-end">
+                    <?php echo "<input type='checkbox' value='" . $hasil['namagejala'] . "' name='gejala[]' />" ?>
+                  </td>
+                </tr>
+
+              <?php
+              }
+              ?>
+            </tbody>
+
+
+
+            <!-- <thead>
+              <tr>
+                <th scope="col">Ciri Penyakit</th>
+                <th scope="col" class="text-end">Checklist</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              foreach ($data_buah as $index => $value) {
+              ?>
+
+                <tr>
+                  <td><?php echo $value['namagejala'] ?></td>
+                  <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
+                </tr>
+
+              <?php
+              }
+              ?> -->
+              <!-- <tr>
               <td>Buah kecil</td>
               <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
             </tr>
@@ -198,32 +259,57 @@ $data_biji = $conn->query($qbiji);
               <td>Bercak kecil coklat kehitaman pada buah</td>
               <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
             </tr> -->
-          </tbody>
-        </table>
-      </div>
-      <div class="rod mt-5">
-        <h5>Batang</h5>
-        <table class="table ms-2 mt-4">
+            <!-- </tbody> -->
+          </table>
+        </div>
+        <div class="rod mt-5">
+          <h5>Batang</h5>
+          <table class="table ms-2 mt-4">
           <thead>
-            <tr>
-              <th scope="col">Ciri Penyakit</th>
-              <th scope="col" class="text-end">Checklist</th>
-            </tr>
-          </thead>
-          <tbody>
-          <?php
-            foreach ($data_batang as $index => $value) {
-            ?>
-
               <tr>
-                <td><?php echo $value['namagejala'] ?></td>
-                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
+                <th scope="col">Ciri Penyakit</th>
+                <th scope="col" class="text-end">Checklist</th>
               </tr>
+            </thead>
+            <tbody>
 
-            <?php
-            }
-            ?>
-            <!-- <tr>
+              <?php
+              $query = $conn->query($qbatang);
+              while ($hasil = mysqli_fetch_array($query)) {
+              ?>
+                <tr>
+                  <td>
+                    <?php echo "" . $hasil['namagejala'] . "<br>"; ?>
+                  </td>
+                  <td class="text-end">
+                    <?php echo "<input type='checkbox' value='" . $hasil['namagejala'] . "' name='gejala[]' />" ?>
+                  </td>
+                </tr>
+
+              <?php
+              }
+              ?>
+            </tbody>
+            <!-- <thead>
+              <tr>
+                <th scope="col">Ciri Penyakit</th>
+                <th scope="col" class="text-end">Checklist</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              foreach ($data_batang as $index => $value) {
+              ?>
+
+                <tr>
+                  <td><?php echo $value['namagejala'] ?></td>
+                  <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
+                </tr>
+
+              <?php
+              }
+              ?> -->
+              <!-- <tr>
               <td>Terdapat bercak pada batang</td>
               <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
             </tr>
@@ -243,32 +329,60 @@ $data_biji = $conn->query($qbiji);
               <td>Tanaman menjadi keriput</td>
               <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
             </tr> -->
-          </tbody>
-        </table>
-      </div>
-      <div class="root mt-5">
-        <h5>Akar</h5>
-        <table class="table ms-2 mt-4">
+            <!-- </tbody> -->
+          </table>
+        </div>
+        <div class="root mt-5">
+          <h5>Akar</h5>
+          <table class="table ms-2 mt-4">
           <thead>
-            <tr>
-              <th scope="col">Ciri Penyakit</th>
-              <th scope="col" class="text-end">Checklist</th>
-            </tr>
-          </thead>
-          <tbody>
-          <?php
-            foreach ($data_akar as $index => $value) {
-            ?>
-
               <tr>
-                <td><?php echo $value['namagejala'] ?></td>
-                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
+                <th scope="col">Ciri Penyakit</th>
+                <th scope="col" class="text-end">Checklist</th>
               </tr>
+            </thead>
+            <tbody>
 
-            <?php
-            }
-            ?>
-            <!-- <tr>
+              <?php
+              $query = $conn->query($qakar);
+              while ($hasil = mysqli_fetch_array($query)) {
+              ?>
+                <tr>
+                  <td>
+                    <?php echo "" . $hasil['namagejala'] . "<br>"; ?>
+                  </td>
+                  <td class="text-end">
+                    <?php echo "<input type='checkbox' value='" . $hasil['namagejala'] . "' name='gejala[]' />" ?>
+                  </td>
+                </tr>
+
+              <?php
+              }
+              ?>
+            </tbody>
+
+
+
+            <!-- <thead>
+              <tr>
+                <th scope="col">Ciri Penyakit</th>
+                <th scope="col" class="text-end">Checklist</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              foreach ($data_akar as $index => $value) {
+              ?>
+
+                <tr>
+                  <td><?php echo $value['namagejala'] ?></td>
+                  <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
+                </tr>
+
+              <?php
+              }
+              ?> -->
+              <!-- <tr>
               <td>Warna jaringan akar coklat</td>
               <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
             </tr>
@@ -280,26 +394,54 @@ $data_biji = $conn->query($qbiji);
               <td>Akar menjadi Kecoklatan</td>
               <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
             </tr> -->
-          </tbody>
-        </table>
-      </div>
-      <div class="flower mt-5">
-        <h5>Bunga</h5>
-        <table class="table ms-2 mt-4">
-          <thead>
-          <?php
-            foreach ($data_bunga as $index => $value) {
-            ?>
-
+            <!-- </tbody> -->
+          </table>
+        </div>
+        <div class="flower mt-5">
+          <h5>Bunga</h5>
+          <table class="table ms-2 mt-4">
+            <thead>
               <tr>
-                <td><?php echo $value['namagejala'] ?></td>
-                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
+                <th scope="col">Ciri Penyakit</th>
+                <th scope="col" class="text-end">Checklist</th>
               </tr>
+            </thead>
+            <tbody>
 
-            <?php
-            }
-            ?>
-            <!-- <tr>
+              <?php
+              $query = $conn->query($qbunga);
+              while ($hasil = mysqli_fetch_array($query)) {
+              ?>
+                <tr>
+                  <td>
+                    <?php echo "" . $hasil['namagejala'] . "<br>"; ?>
+                  </td>
+                  <td class="text-end">
+                    <?php echo "<input type='checkbox' value='" . $hasil['namagejala'] . "' name='gejala[]' />" ?>
+                  </td>
+                </tr>
+
+              <?php
+              }
+              ?>
+            </tbody>
+
+
+
+            <!-- <thead>
+              <?php
+              foreach ($data_bunga as $index => $value) {
+              ?>
+
+                <tr>
+                  <td><?php echo $value['namagejala'] ?></td>
+                  <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
+                </tr>
+
+              <?php
+              }
+              ?> -->
+              <!-- <tr>
               <th scope="col">Ciri Penyakit</th>
               <th scope="col" class="text-end">Checklist</th>
             </tr>
@@ -313,32 +455,37 @@ $data_biji = $conn->query($qbiji);
               <td>Tunas dan bunga gugur</td>
               <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
             </tr> -->
-          </tbody>
-        </table>
-      </div>
-      <div class="seed mt-5">
-        <h5>Biji</h5>
-        <table class="table ms-2 mt-4">
-          <thead>
-            <tr>
-              <th scope="col">Ciri Penyakit</th>
-              <th scope="col" class="text-end">Checklist</th>
-            </tr>
-          </thead>
-          <tbody>
-          <?php
-            foreach ($data_biji as $index => $value) {
-            ?>
-
+              <!-- </tbody> -->
+          </table>
+        </div>
+        <div class="seed mt-5">
+          <h5>Biji</h5>
+          <table class="table ms-2 mt-4">
+            <thead>
               <tr>
-                <td><?php echo $value['namagejala'] ?></td>
-                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
+                <th scope="col">Ciri Penyakit</th>
+                <th scope="col" class="text-end">Checklist</th>
               </tr>
+            </thead>
+            <tbody>
 
-            <?php
-            }
-            ?>
-            <!-- <tr>
+              <?php
+              $query = $conn->query($qbiji);
+              while ($hasil = mysqli_fetch_array($query)) {
+              ?>
+                <tr>
+                  <td>
+                    <?php echo "" . $hasil['namagejala'] . "<br>"; ?>
+                  </td>
+                  <td class="text-end">
+                    <?php echo "<input type='checkbox' value='" . $hasil['namagejala'] . "' name='gejala[]' />" ?>
+                  </td>
+                </tr>
+
+              <?php
+              }
+              ?>
+              <!-- <tr>
               <td>Biji yang terserang menjadi coklat</td>
               <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
             </tr>
@@ -346,12 +493,55 @@ $data_biji = $conn->query($qbiji);
               <td>Biji yang terserang menjadi keriput</td>
               <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
             </tr> -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="button mt-5 text-center">
-      <a class="btn btn-light" href="hasil_diagnosis.php" role="button">CEK PENYAKIT</a>
+            </tbody>
+          </table>
+        </div>
+        <div class="button mt-5 text-center">
+          <!-- <a class="btn btn-light" href="hasil_diagnosis.php" role="button">CEK PENYAKIT</a> -->
+          <button type="submit" name="submit" onclick="return checkDiagnosa()" class="btn btn-primary">CEK PENYAKIT</button><br><br>
+        </div>
+        <div class="panel panel-info">
+          <div class="panel-heading">HASIL DIAGNOSA</div>
+          <div class="panel-body">
+            <div class="box-body table-responsive">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>NO</th>
+                    <th>ID PENYAKIT</th>
+                    <th>Nama Penyakit</th>
+                    <th>Detail</th>
+                  </tr>
+                </thead>
+                <?php
+                if (isset($_POST['submit'])) {
+                  $gejala = $_POST['gejala'];
+                  $jumlah_dipilih = count($gejala);
+                  for ($x = 0; $x < $jumlah_dipilih; $x++) {
+                    $tampil = "select DISTINCT p.idpenyakit, p.namapenyakit from basispengetahuan b, penyakit p where b.namagejala='$gejala[$x]' and p.namapenyakit=b.namapenyakit group by namapenyakit";
+                    $result = $conn->query($tampil);
+                    $hasil  = mysqli_fetch_array($result);
+                  }
+                  echo "
+                           <tr>  
+        			             <td>" . $x . "</td>
+                                 <td>" . $hasil['idpenyakit'] . "</td>
+					             <td>" . $hasil['namapenyakit'] . "</td>  
+                                 <td><a href=\"detail.php?idpenyakit=" . $hasil['idpenyakit'] . "\"><img src='assets/magnifying.png' style='width: 10%;'></a></td>
+        		          </tr>   
+                               
+                               ";
+                }
+
+                ?>
+              </table>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <?php
+      var_dump($_POST); ?>
     </div>
   </main>
 
@@ -368,6 +558,18 @@ $data_biji = $conn->query($qbiji);
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
+
+  <script language="JavaScript" type="text/javascript">
+    // $(document).ready(function() {
+    //   $("#myBtn").click(function() {
+    //     $("#myModal").modal();
+    //   });
+    // });
+
+    function checkDiagnosa() {
+      return confirm('Apakah sudah benar gejalanya?');
+    }
+  </script>
 </body>
 
 </html>
