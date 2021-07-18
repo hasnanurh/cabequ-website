@@ -113,7 +113,7 @@ var_dump($data_biji);
       Diagnosis adalah identifikasi mengenai sesuatu. Diagnosis digunakan dalam medis, ilmu pengetahuan, teknik, bisnis, dll. Disusun menggunakan Sistem pakar metode forward chaining, Cabequ dapat menentukan kondisi tanaman cabai berdasarkan gejala-gejala yang diinputkan, sebagai dasar pengambilan keputusan medis untuk prognosis dan pengobatan.
     </p>
     <div class="feature mt-5 me-4">
-      <form id="form2" name="form2" method="post" action="diagnosis.php">
+      <form id="form2" name="form2" method="post" action="hasil_diagnosis.php">
         <div class="leaves">
           <h5>Daun</h5>
           <table class="table ms-2 mt-4">
