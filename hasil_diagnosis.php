@@ -49,17 +49,7 @@ include "koneksi.php";
   <!-- Description-->
   <div class="modal-body" style="padding: 100px 50px">
     <h2 style="color: #000000">Hasil Diagnosis</h2>
-    <!-- <p style="color: #000000; text-align: justify">
-        Cabai atau cabai merah atau lombok adalah buah dan tumbuhan anggota genus Capsicum. Buahnya dapat digolongkan sebagai sayuran maupun bumbu, tergantung bagaimana digunakan. Sebagai bumbu, buah cabai yang pedas sangat populer di Asia
-        Tenggara sebagai penguat rasa makanan. Cabai merah besar (Capsicum annuum L.) merupakan salah satu jenis sayuran yang memilki nilai ekonomi yang tinggi. Cabai mengandung berbagai macam senyawa yang berguna bagi kesehatan manusia.
-        Cabai mengandung antioksidan yang berfungsi untuk menjaga tubuh dari serangan radikal bebas. Kandungan terbesar antioksidan ini adalah pada cabai hijau. Cabai juga mengandung Lasparaginase dan Capsaicin yang berperan sebagai zat
-        antikanker. Cabai (Capsicum annum L) merupakan salah satu komoditas sayuran yang banyak dibudidayakan oleh petani di Indonesia karena memiliki harga jual yang tinggi dan memiliki beberapa manfaat kesehatan yang salah satunya adalah
-        zat capsaicin yang berfungsi dalam mengendalikan penyakit kanker. Selain itu kandungan vitamin C yang cukup tinggi pada cabai dapat memenuhi kebutuhan harian setiap orang, namun harus dikonsumsi secukupnya untuk menghindari nyeri
-        lambung.
-      </p> -->
-
     <div class="panel panel-info">
-      <div class="panel-heading">HASIL DIAGNOSA</div>
       <div class="panel-body">
         <div class="box-body table-responsive">
           <table id="example1" class="table table-bordered table-striped">
@@ -97,13 +87,6 @@ include "koneksi.php";
       </div>
     </div>
 
-  </div>
-  <div class="button" style="padding-bottom: 100px">
-    <div class="modal-body" style="padding: 0px 50px">
-      <div>
-        <a class="btn btn-light" href="detail.php" role="button">DETAIL</a>
-      </div>
-    </div>
   </div>
   <footer class="footer">
     <p>CABEQU &#169; 2021</p>

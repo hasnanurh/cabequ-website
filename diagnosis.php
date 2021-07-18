@@ -138,19 +138,6 @@ $data_biji = $conn->query($qbiji);
               }
               ?>
             </tbody>
-
-            <?php
-            foreach ($data_daun as $index => $value) {
-            ?>
-
-              <tr>
-                <td><?php echo $value['namagejala'] ?></td>
-                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
-              </tr>
-
-            <?php
-            }
-            ?>
           </table>
         </div>
         <div class="fruits mt-5">
@@ -181,18 +168,6 @@ $data_biji = $conn->query($qbiji);
               }
               ?>
             </tbody>
-            <?php
-            foreach ($data_buah as $index => $value) {
-            ?>
-
-              <tr>
-                <td><?php echo $value['namagejala'] ?></td>
-                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
-              </tr>
-
-            <?php
-            }
-            ?>
           </table>
         </div>
         <div class="rod mt-5">
@@ -223,18 +198,6 @@ $data_biji = $conn->query($qbiji);
               }
               ?>
             </tbody>
-            <?php
-            foreach ($data_batang as $index => $value) {
-            ?>
-
-              <tr>
-                <td><?php echo $value['namagejala'] ?></td>
-                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
-              </tr>
-
-            <?php
-            }
-            ?>
           </table>
         </div>
         <div class="root mt-5">
@@ -265,19 +228,6 @@ $data_biji = $conn->query($qbiji);
               }
               ?>
             </tbody>
-
-            <?php
-            foreach ($data_akar as $index => $value) {
-            ?>
-
-              <tr>
-                <td><?php echo $value['namagejala'] ?></td>
-                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
-              </tr>
-
-            <?php
-            }
-            ?>
           </table>
         </div>
         <div class="flower mt-5">
@@ -308,18 +258,6 @@ $data_biji = $conn->query($qbiji);
               }
               ?>
             </tbody>
-            <?php
-            foreach ($data_bunga as $index => $value) {
-            ?>
-
-              <tr>
-                <td><?php echo $value['namagejala'] ?></td>
-                <td class="text-end"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." /></td>
-              </tr>
-
-            <?php
-            }
-            ?>
           </table>
         </div>
         <div class="seed mt-5">
