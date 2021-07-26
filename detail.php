@@ -101,8 +101,8 @@ $data_penyakit = $conn->query($qpenyakit);
       <h5>Kimiawi</h5>
       <p><?php echo $value['kimiawi'] ?></p>
 
-      <h5>hayati</h5>
-      <p><?php echo $value['hayati'] ?></p>
+      <h5>Hayati</h5>
+      <p style="padding-bottom: 100px;"><?php echo $value['hayati'] ?></p>
 
     </div>
   </main>
