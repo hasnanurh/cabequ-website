@@ -49,7 +49,7 @@
                                 <input type="text" name="fullname" id="fullname"
                                     value="<?php echo $_GET['fullname']; ?>" class="form-control">
                                 <?php }else{ ?>
-                                <input type="text" name="fullname" class="form-control"><br>
+                                <input type="text" name="fullname" class="form-control">
                                 <?php }?>
                             </div>
                             <div class="form-group">
@@ -58,13 +58,13 @@
                                 <input type="text" name="username" id="username"
                                     value="<?php echo $_GET['username']; ?>" class=" form-control">
                                 <?php }else{ ?>
-                                <input type="text" name="username" class=" form-control"><br>
+                                <input type="text" name="username" class=" form-control">
                                 <?php }?>
                             </div>
                             <div class="form-group">
 
                                 <label for="password" class="text-info">Password:</label><br>
-                                <input type="text" name="password" id="password" class="form-control">
+                                <input type="password" name="password" id="password" class="form-control">
                             </div>
                             <div class="form-group">
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
