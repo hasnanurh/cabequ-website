@@ -60,7 +60,7 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
 
     <body>
         <header>
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #3a595c">
+            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3a595c">
                 <div class="container">
                     <a class="navbar-brand" href="index.php">
                         <img src="assets/logo.png" alt="" width="197" height="54" />
