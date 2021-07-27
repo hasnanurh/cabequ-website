@@ -1,8 +1,14 @@
 <?php
 session_start();
 include "koneksi.php";
-$qartikel = "select * from artikel";
-$data_artikel = $conn->query($qartikel);
+// $qartikel = "select * from artikel";
+// $data_artikel = $conn->query($qartikel);
+
+$id = $_GET['id_artikel'];
+// Query untuk menampilkan data siswa berdasarkan ID yang dikirim
+$sql = "SELECT * FROM artikel WHERE id_artikel=$id";
+$data_artikel = $conn->query($sql);
+var_dump($data_artikel);
 
 if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
 
@@ -91,52 +97,29 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
         <body>
             <h1>Hello, <?php echo $_SESSION['username']; ?></h1>
             <a href="logout.php">Logout</a>
-            <!-- <table>
-                <thead>
-                    <th>No </th>
-                </thead>
-                <tbody>
-                    <?php
-                    foreach ($data_penyakit as $index => $value) {
-                    ?>
 
-                        <tr>
-                            <td><?php echo $value['idpenyakit'] ?></td>
-                        </tr>
-
-                    <?php
-                    }
-                    ?>
-                </tbody>
-            </table> -->
-
-            <div class="container pt-5 ">
-                <div class="row">
+            <form method="post" action="proses_ubah.php?id_artikel=<?php echo $id; ?>">
+                <table cellpadding="8">
                     <?php
                         foreach ($data_artikel as $index => $value) {
                         ?>
-                    <div class="col-md-4">
-                        
-                            <div class="card shadow p-3 mb-4 bg-body" style="width: 18rem;">
-                                <img src="<?php echo $value['gambar'] ?>" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title"><?php echo $value['judul'] ?></h5>
-                                    <p class="card-text"><?php echo $value['isi'] ?></p>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="detail.php?id_artikel=<?php echo $value['id_artikel'] ?>"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                                        <a href="update.php?id_artikel=<?php echo $value['id_artikel'] ?>"><button type="button" id="edit-detail" class="btn btn-sm btn-outline-primary">Edit</button></a>
-                                        <a href="hapus.php?id_artikel=<?php echo $value['id_artikel'] ?>"><button type="button" id="delete-quote" class="btn btn-sm btn-outline-danger">Delete</button></a>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                        <?php
+                    <tr>
+                        <td>Judul</td>
+                        <td><input type="text" name="judul" value="<?php echo $value['judul']; ?>"></td>
+                    </tr>
+                    <tr>
+                        <td>Isi</td>
+                        <td><input type="text" name="isi" value="<?php echo $value['isi']; ?>"></td>
+                    </tr>
+                    <?php
                         }
                         ?>
-                </div>
-            </div>
+                </table>
+                <hr>
+                <input type="submit" value="Ubah">
+                <a href="home_admin.php"><input type="button" value="Batal"></a>
+            </form>
+
         </body>
         <footer>
             <p>CABEQU &#169; 2021</p>
