@@ -21,7 +21,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         header("Location: login.php?error=Password is required");
 	    exit();
 	}else{
-        // $password = md5($password);
+        $password = md5($password);
 		$sql = "SELECT * FROM user WHERE username='$username' AND password='$password'";
 
 		$result = mysqli_query($conn, $sql);
