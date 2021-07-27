@@ -8,7 +8,6 @@ $id = $_GET['id_artikel'];
 // Query untuk menampilkan data siswa berdasarkan ID yang dikirim
 $sql = "SELECT * FROM artikel WHERE id_artikel=$id";
 $data_artikel = $conn->query($sql);
-var_dump($data_artikel);
 
 if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
 
@@ -98,7 +97,7 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
             <h1>Hello, <?php echo $_SESSION['username']; ?></h1>
             <a href="logout.php">Logout</a>
 
-            <form method="post" action="proses_ubah.php?id_artikel=<?php echo $id; ?>">
+            <form method="post" action="proses_ubah.php?id_artikel=<?php echo $id; ?>" enctype="multipart/form-data">
                 <table cellpadding="8">
                     <?php
                         foreach ($data_artikel as $index => $value) {
@@ -111,12 +110,17 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
                         <td>Isi</td>
                         <td><input type="text" name="isi" value="<?php echo $value['isi']; ?>"></td>
                     </tr>
+                    <tr>
+                        <td>Pilih Gambar:</td>
+                        <td><input type="file" name="gambar_contoh" id="gambar_contoh">
+                        </td>
+                    </tr>
                     <?php
                         }
                         ?>
                 </table>
                 <hr>
-                <input type="submit" value="Ubah">
+                <input type="submit" name="submit" value="Ubah">
                 <a href="home_admin.php"><input type="button" value="Batal"></a>
             </form>
 

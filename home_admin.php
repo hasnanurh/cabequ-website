@@ -92,19 +92,18 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
             <h1>Hello, <?php echo $_SESSION['username']; ?></h1>
             <a href="logout.php">Logout</a>
             <br>
-            
-            <a href="create.php">Tambah Artikel</button></a>
-                                        
 
             <div class="container pt-5 ">
+
+                <a href="create.php"><button type="button" id="delete-quote" class="btn btn-sm btn-primary">Tambah Artikel</button></a>
                 <div class="row">
                     <?php
-                        foreach ($data_artikel as $index => $value) {
-                        ?>
-                    <div class="col-md-4">
-                        
+                    foreach ($data_artikel as $index => $value) {
+                    ?>
+                        <div class="col-md-4">
+
                             <div class="card shadow p-3 mb-4 bg-body" style="width: 18rem;">
-                                <img src="uploads/<?php echo $value['gambar']; ?>" width="80px" height="80px" class="card-img-top" alt="...">
+                                <img src="uploads/<?php echo $value['gambar']; ?>" class="card-img-top">
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $value['judul'] ?></h5>
                                     <p class="card-text"><?php echo substr($value['isi'], 0, 70) ?></p>
@@ -117,10 +116,10 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
                                     </div>
                                 </div>
                             </div>
-                    </div>
-                        <?php
-                        }
-                        ?>
+                        </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </body>
