@@ -1,8 +1,6 @@
 <?php
 session_start();
 include "koneksi.php";
-$qartikel = "select * from artikel";
-$data_artikel = $conn->query($qartikel);
 
 if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
 
@@ -91,38 +89,27 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
         <body>
             <h1>Hello, <?php echo $_SESSION['username']; ?></h1>
             <a href="logout.php">Logout</a>
-            <br>
-            
-            <a href="create.php">Tambah Artikel</button></a>
-                                        
 
-            <div class="container pt-5 ">
-                <div class="row">
-                    <?php
-                        foreach ($data_artikel as $index => $value) {
-                        ?>
-                    <div class="col-md-4">
-                        
-                            <div class="card shadow p-3 mb-4 bg-body" style="width: 18rem;">
-                                <img src="uploads/<?php echo $value['gambar']; ?>" width="80px" height="80px" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title"><?php echo $value['judul'] ?></h5>
-                                    <p class="card-text"><?php echo substr($value['isi'], 0, 70) ?></p>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="detail.php?id_artikel=<?php echo $value['id_artikel'] ?>"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                                        <a href="update.php?id_artikel=<?php echo $value['id_artikel'] ?>"><button type="button" id="edit-detail" class="btn btn-sm btn-outline-primary">Edit</button></a>
-                                        <a href="hapus.php?id_artikel=<?php echo $value['id_artikel'] ?>"><button type="button" id="delete-quote" class="btn btn-sm btn-outline-danger">Delete</button></a>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                        <?php
-                        }
-                        ?>
-                </div>
-            </div>
+            <form method="post" action="proses_tambah.php" enctype="multipart/form-data">
+                <table cellpadding="8">
+                    <tr>
+                        <td>Judul</td>
+                        <td><input type="text" name="judul"></td>
+                    </tr>
+                    <tr>
+                        <td>Isi</td>
+                        <td><input type="text" name="isi"></td>
+                    </tr>
+                    <tr>
+                        <td>Pilih Gambar:</td>
+                        <td><input type="file" name="gambar_contoh" id="gambar_contoh">
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" name="submit" value="simpan">
+                <a href="home_admin.php"><input type="button" value="Batal"></a>
+            </form>
+
         </body>
         <footer>
             <p>CABEQU &#169; 2021</p>
