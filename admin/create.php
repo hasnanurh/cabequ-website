@@ -87,29 +87,31 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
         </header>
 
         <main>
-            <h1>Hello, <?php echo $_SESSION['username']; ?></h1>
-            <a href="logout.php">Logout</a>
+            <div class="container pb-5">
+                <h1>Hello, <?php echo $_SESSION['username']; ?></h1>
+                <a href="logout.php">Logout</a>
+                <h4 class="mb-3">Input Data</h4>
+                <form method="post" action="proses_tambah.php" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="judul">Judul</label>
+                        <input type="text" class="form-control" id="judul" name="judul" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="isi">Isi</label>
+                        <textarea type="text" class="form-control" id="isi" name="isi" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="gambar_contoh">Pilih Gambar</label>
+                        <input type="file"class="form-control" name="gambar_contoh" id="gambar_contoh">
+                    </div>
+                    <div class="row">
+                    </div>
+                    <hr class="mb-4">
 
-            <form method="post" action="proses_tambah.php" enctype="multipart/form-data">
-                <table cellpadding="8">
-                    <tr>
-                        <td>Judul</td>
-                        <td><input type="text" name="judul"></td>
-                    </tr>
-                    <tr>
-                        <td>Isi</td>
-                        <td><input type="text" name="isi"></td>
-                    </tr>
-                    <tr>
-                        <td>Pilih Gambar:</td>
-                        <td><input type="file" name="gambar_contoh" id="gambar_contoh">
-                        </td>
-                    </tr>
-                </table>
-                <input type="submit" name="submit" value="simpan">
-                <a href="home_admin.php"><input type="button" value="Batal"></a>
-            </form>
-
+                    <!-- <input type="submit" name="submit" value="simpan"> -->
+                    <button class="btn btn-primary btn-md btn-block" type="submit" name="submit">Simpan Data</button>
+                </form>
+            </div>
         </main>
         <footer>
             <p>CABEQU &#169; 2021</p>
