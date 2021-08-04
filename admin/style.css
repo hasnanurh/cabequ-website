@@ -1,0 +1,112 @@
+.jumbotron{
+    padding: 2rem;
+    background-color: #3A595C;
+}
+.jumbo2{
+    padding: 5rem 0;
+    background-color: #B9D6C8;
+}
+.jumbo3{
+	background-image: url(assets/bg.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#cabe1{
+    width: 100%;
+}
+.dok{
+    width: 80%;
+}
+/* .col{
+    border: 1px solid
+} */
+h2{
+    color: #E1CACA;
+}
+h3{
+    font-weight: bold;
+    text-align: center;
+}
+p{
+    color: #E1CACA;
+}
+.ket p{
+    color:black;
+}
+content {
+	width: 90%;
+	margin: auto;
+	/* padding: 10px; */
+}
+
+content article {
+	display: flex;
+	margin-top: 50px;
+	align-items: center;
+}
+.gambar img{
+	width:90%;
+}
+.btn{
+    border-color: none;
+    background-color:#D1909C;
+}
+#card{
+    display: flex;
+    justify-content: space-between;
+    /* flex-direction: column; */
+    
+}
+.card img{
+    width: 80%;
+    border-radius: 50%;
+}
+.card{
+    place-items: center;
+    background-color:#3A595C;
+    color:#E1CACA;
+}
+footer{
+	padding: 20px;
+	color: white;
+	background-color: #3A595C;
+	text-align: center;
+	font-weight: bold;
+}
+.detail{
+    padding-left: 100px;
+}
+
+.detail h5{
+    font-weight: bold; 
+    color: black; 
+    padding-top: 10px;
+}
+.detail p{
+    color: black;
+}
+
+/*responsive breakpoint*/
+
+/*ukuran tablet*/
+@media screen and (max-width: 768px){
+    #card{
+        flex-direction: column;
+        align-items: center;
+    }
+    .ket{
+        text-align: center;
+    }
+
+}
+/*ukuran mobile*/
+@media screen and (max-width: 576px){
+    .card img{
+        width:50%;
+    }
+    content article {
+        flex-direction: column;
+    }
+
+}

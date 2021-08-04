@@ -77,6 +77,9 @@ $data_penyakit = $conn->query($qpenyakit);
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="about_chili.php">About Chilli</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="admin/home_admin.php">Admin</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -85,28 +88,28 @@ $data_penyakit = $conn->query($qpenyakit);
   foreach ($data_penyakit as $index => $value) {
   ?>
 
-  <main>
-    <div class="detail">
-      <!-- <h3 style="padding-top: 100px; text-align: start">Penyakit <?php echo $value['namapenyakit'] ?></h3> -->
-      <img src="<?php echo $value['gambarpenyakit'] ?>" style="width: 40%; padding-top: 100px;" />
-      <h5>Nama Latin</h5>
-      <p><?php echo $value['namapenyakit'] ?></p>
+    <main>
+      <div class="detail">
+        <!-- <h3 style="padding-top: 100px; text-align: start">Penyakit <?php echo $value['namapenyakit'] ?></h3> -->
+        <img src="<?php echo $value['gambarpenyakit'] ?>" style="width: 40%; padding-top: 100px;" />
+        <h5>Nama Latin</h5>
+        <p><?php echo $value['namapenyakit'] ?></p>
 
-      <h5>Kultur Teknis</h5>
-      <p><?php echo $value['kulturteknis'] ?></p>
+        <h5>Kultur Teknis</h5>
+        <p><?php echo $value['kulturteknis'] ?></p>
 
-      <h5>Fisik Mekanis</h5>
-      <p><?php echo $value['fisikmekanis'] ?></p>
+        <h5>Fisik Mekanis</h5>
+        <p><?php echo $value['fisikmekanis'] ?></p>
 
-      <h5>Kimiawi</h5>
-      <p><?php echo $value['kimiawi'] ?></p>
+        <h5>Kimiawi</h5>
+        <p><?php echo $value['kimiawi'] ?></p>
 
-      <h5>Hayati</h5>
-      <p style="padding-bottom: 100px;"><?php echo $value['hayati'] ?></p>
+        <h5>Hayati</h5>
+        <p style="padding-bottom: 100px;"><?php echo $value['hayati'] ?></p>
 
-    </div>
-  </main>
-  
+      </div>
+    </main>
+
   <?php
   }
   ?>

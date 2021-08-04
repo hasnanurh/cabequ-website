@@ -1,9 +1,6 @@
 <?php
 session_start();
-include "koneksi.php";
-$idArtikel = $_GET["id_artikel"];
-$qartikel = "select * from artikel where id_artikel = $idArtikel";
-$data_artikel = $conn->query($qartikel);
+include "../koneksi.php";
 
 if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
 
@@ -42,7 +39,7 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
                 width: 100%;
                 height: 100%;
                 z-index: 9999;
-                background: url(assets/preloader.gif) center no-repeat #fff;
+                background: url(../assets/preloader.gif) center no-repeat #fff;
             }
         </style>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
@@ -56,7 +53,7 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
         </script>
 
         <title>CABEQU</title>
-        <link rel="icon" href="assets/logo2.png" />
+        <link rel="icon" href="../assets/logo2.png" />
     </head>
 
     <body>
@@ -64,7 +61,7 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
             <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3a595c">
                 <div class="container">
                     <a class="navbar-brand" href="index.php">
-                        <img src="assets/logo.png" alt="" width="197" height="54" />
+                        <img src="../assets/logo.png" alt="" width="197" height="54" />
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -72,16 +69,16 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="diagnosis.php">Diagnosis</a>
+                                <a class="nav-link active" aria-current="page" href="../diagnosis.php">Diagnosis</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="about_chili.php">About Chilli</a>
+                                <a class="nav-link active" aria-current="page" href="../about_chili.php">About Chilli</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="login.php">Admin</a>
+                                <a class="nav-link active" aria-current="page" href="home_admin.php">Admin</a>
                             </li>
                         </ul>
                     </div>
@@ -90,18 +87,30 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
         </header>
 
         <main>
-            <div class="container" style="text-align: center;">
-                <?php
-                foreach ($data_artikel as $index => $value) {
-                ?>
-                    <h1 style="padding-top: 50px; padding-bottom:20px;"><?php echo $value['judul'] ?></h1>
-                    <img src="uploads/<?php echo $value['gambar'] ?>" style="max-width: 300px; padding-bottom:20px;">
-                    <p style="color: black; text-align:justify; padding-bottom:20px; "><?php echo $value['isi'] ?></p>
-                <?php
-                }
-                ?>
-            </div>
-            </main>
+            <h1>Hello, <?php echo $_SESSION['username']; ?></h1>
+            <a href="logout.php">Logout</a>
+
+            <form method="post" action="proses_tambah.php" enctype="multipart/form-data">
+                <table cellpadding="8">
+                    <tr>
+                        <td>Judul</td>
+                        <td><input type="text" name="judul"></td>
+                    </tr>
+                    <tr>
+                        <td>Isi</td>
+                        <td><input type="text" name="isi"></td>
+                    </tr>
+                    <tr>
+                        <td>Pilih Gambar:</td>
+                        <td><input type="file" name="gambar_contoh" id="gambar_contoh">
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" name="submit" value="simpan">
+                <a href="home_admin.php"><input type="button" value="Batal"></a>
+            </form>
+
+        </main>
         <footer>
             <p>CABEQU &#169; 2021</p>
         </footer>

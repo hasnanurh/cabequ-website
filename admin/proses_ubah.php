@@ -1,6 +1,6 @@
 <?php
 // Load file koneksi.php
-include "koneksi.php";
+include "../koneksi.php";
 // Ambil data ID yang dikirim oleh form_ubah.php melalui URL
 $id = $_GET['id_artikel'];
 // Ambil Data yang Dikirim dari Form
@@ -8,7 +8,7 @@ $judul = $_POST['judul'];
 $isi = $_POST['isi'];
 $c = $_POST['gambar_contoh'];
 
-$target_dir = "uploads/";
+$target_dir = "../uploads/";
 $target_file = $target_dir . basename($_FILES["gambar_contoh"]["name"]);
 $error = false;
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -50,7 +50,7 @@ if (isset($_POST["submit"])) {
 $fileName = $_FILES['gambar_contoh']['name'];
 // Proses ubah data ke Database
 $sql = "UPDATE artikel SET judul='$judul', isi='$isi', gambar='$fileName' WHERE id_artikel=$id";
-move_uploaded_file($_FILES['gambar']['tmp_name'], "uploads/".$_FILES['gambar']['name']);
+move_uploaded_file($_FILES['gambar']['tmp_name'], "../uploads/".$_FILES['gambar']['name']);
 
 $execute = $conn->query($sql); // Eksekusi / Jalankan query
 if($execute){ // Cek jika proses simpan ke database sukses atau tidak

@@ -41,6 +41,9 @@ include "koneksi.php";
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="about_chili.php">About Chilli</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="admin/home_admin.php">Admin</a>
+          </li>
         </ul>
       </div>
     </div>

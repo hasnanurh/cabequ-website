@@ -74,7 +74,7 @@ $data_biji = $conn->query($qbiji);
 
 <body>
   <div class="se-pre-con"></div>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #3a595c">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #3a595c">
     <div class="container">
       <a class="navbar-brand" href="index.php">
         <img src="assets/logo.png" alt="" width="197" height="54" />
@@ -92,6 +92,9 @@ $data_biji = $conn->query($qbiji);
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="about_chili.php">About Chilli</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="admin/home_admin.php">Admin</a>
           </li>
         </ul>
       </div>

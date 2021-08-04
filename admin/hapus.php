@@ -1,6 +1,6 @@
 <?php
 // Load file koneksi.php
-include "koneksi.php";
+include "../koneksi.php";
 // Ambil data ID yang dikirim oleh index.php melalui URL
 $id_artikel = $_GET['id_artikel'];
 // Query untuk menghapus data siswa berdasarkan ID yang dikirim

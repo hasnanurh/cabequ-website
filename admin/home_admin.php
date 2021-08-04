@@ -1,13 +1,8 @@
 <?php
 session_start();
-include "koneksi.php";
-// $qartikel = "select * from artikel";
-// $data_artikel = $conn->query($qartikel);
-
-$id = $_GET['id_artikel'];
-// Query untuk menampilkan data siswa berdasarkan ID yang dikirim
-$sql = "SELECT * FROM artikel WHERE id_artikel=$id";
-$data_artikel = $conn->query($sql);
+include "../koneksi.php";
+$qartikel = "select * from artikel";
+$data_artikel = $conn->query($qartikel);
 
 if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
 
@@ -46,7 +41,7 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
                 width: 100%;
                 height: 100%;
                 z-index: 9999;
-                background: url(assets/preloader.gif) center no-repeat #fff;
+                background: url(../assets/preloader.gif) center no-repeat #fff;
             }
         </style>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
@@ -60,7 +55,7 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
         </script>
 
         <title>CABEQU</title>
-        <link rel="icon" href="assets/logo2.png" />
+        <link rel="icon" href="../assets/logo2.png" />
     </head>
 
     <body>
@@ -68,7 +63,7 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
             <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3a595c">
                 <div class="container">
                     <a class="navbar-brand" href="index.php">
-                        <img src="assets/logo.png" alt="" width="197" height="54" />
+                        <img src="../assets/logo.png" alt="" width="197" height="54" />
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -76,16 +71,16 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="diagnosis.php">Diagnosis</a>
+                                <a class="nav-link active" aria-current="page" href="../diagnosis.php">Diagnosis</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="about_chili.php">About Chilli</a>
+                                <a class="nav-link active" aria-current="page" href="../about_chili.php">About Chilli</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="login.php">Admin</a>
+                                <a class="nav-link active" aria-current="page" href="home_admin.php">Admin</a>
                             </li>
                         </ul>
                     </div>
@@ -96,34 +91,40 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
         <main>
             <h1>Hello, <?php echo $_SESSION['username']; ?></h1>
             <a href="logout.php">Logout</a>
+            <br>
 
-            <form method="post" action="proses_ubah.php?id_artikel=<?php echo $id; ?>" enctype="multipart/form-data">
-                <table cellpadding="8">
-                    <?php
-                        foreach ($data_artikel as $index => $value) {
-                        ?>
-                    <tr>
-                        <td>Judul</td>
-                        <td><input type="text" name="judul" value="<?php echo $value['judul']; ?>"></td>
-                    </tr>
-                    <tr>
-                        <td>Isi</td>
-                        <td><input type="text" name="isi" value="<?php echo $value['isi']; ?>"></td>
-                    </tr>
-                    <tr>
-                        <td>Pilih Gambar:</td>
-                        <td><input type="file" name="gambar_contoh" id="gambar_contoh">
-                        </td>
-                    </tr>
-                    <?php
-                        }
-                        ?>
-                </table>
-                <hr>
-                <input type="submit" name="submit" value="Ubah">
-                <a href="home_admin.php"><input type="button" value="Batal"></a>
-            </form>
+            <div class="container pt-5 ">
 
+                <div class="add" style="padding-bottom: 20px;">
+                    <a href="create.php"><button type="button" id="delete-quote" class="btn btn-sm btn-primary">Tambah Artikel</button></a>
+                </div>
+
+                <div class="row">
+                    <?php
+                    foreach ($data_artikel as $index => $value) {
+                    ?>
+                        <div class="col-md-4">
+
+                            <div class="card shadow p-3 mb-4 bg-body" style="width: 18rem;">
+                                <img src="../uploads/<?php echo $value['gambar']; ?>" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $value['judul'] ?></h5>
+                                    <p class="card-text"><?php echo substr($value['isi'], 0, 70) ?></p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="artikel.php?id_artikel=<?php echo $value['id_artikel'] ?>"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                                        <a href="update.php?id_artikel=<?php echo $value['id_artikel'] ?>"><button type="button" id="edit-detail" class="btn btn-sm btn-outline-primary">Edit</button></a>
+                                        <a href="hapus.php?id_artikel=<?php echo $value['id_artikel'] ?>"><button type="button" id="delete-quote" class="btn btn-sm btn-outline-danger">Delete</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
         </main>
         <footer>
             <p>CABEQU &#169; 2021</p>
