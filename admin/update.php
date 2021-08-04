@@ -94,11 +94,32 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
         </header>
 
         <main>
-            <h1>Hello, <?php echo $_SESSION['username']; ?></h1>
-            <a href="logout.php">Logout</a>
+            <div class="container mt-5 mb-5">
 
-            <form method="post" action="proses_ubah.php?id_artikel=<?php echo $id; ?>" enctype="multipart/form-data">
-                <table cellpadding="8">
+                <h4 class="mb-3">Update Data</h4>
+                <form method="post" action="proses_ubah.php?id_artikel=<?php echo $id; ?>" enctype="multipart/form-data">
+                    <?php
+                    foreach ($data_artikel as $index => $value) {
+                    ?>
+                        <div class="mb-3">
+                            <label for="judul">Judul</label>
+                            <input type="text" class="form-control" id="judul" name="judul" value="<?php echo $value['judul']; ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="isi">Isi</label>
+                            <input type="text" class="form-control" id="isi" name="isi" value="<?php echo $value['isi']; ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="gambar_contoh">Pilih Gambar</label>
+                            <input type="file" class="form-control" name="gambar_contoh" id="gambar_contoh">
+                        </div>
+                        <div class="row">
+                        </div>
+                        <hr class="mb-4">
+                    <?php
+                    }
+                    ?>
+                    <!-- <table cellpadding="8">
                     <?php
                     foreach ($data_artikel as $index => $value) {
                     ?>
@@ -119,11 +140,13 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
                     }
                     ?>
                 </table>
-                <hr>
-                <input type="submit" name="submit" value="Ubah">
-                <a href="home_admin.php"><input type="button" value="Batal"></a>
-            </form>
-
+                <hr> -->
+                    <button class="btn btn-primary btn-md btn-block" type="submit" name="submit">Update Data</button>
+                    <a href="home_admin.php"><button  class="btn btn-secondary btn-md btn-block" type="button">Batal</button></a>
+                    <!-- <input type="submit" name="submit" value="Ubah">
+                    <a href="home_admin.php"><input type="button" value="Batal"></a> -->
+                </form>
+            </div>
         </main>
         <footer>
             <p>CABEQU &#169; 2021</p>
