@@ -88,14 +88,17 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
             </nav>
         </header>
 
-        <body>
+        <main>
             <h1>Hello, <?php echo $_SESSION['username']; ?></h1>
             <a href="logout.php">Logout</a>
             <br>
 
             <div class="container pt-5 ">
 
-                <a href="create.php"><button type="button" id="delete-quote" class="btn btn-sm btn-primary">Tambah Artikel</button></a>
+                <div class="add" style="padding-bottom: 20px;">
+                    <a href="create.php"><button type="button" id="delete-quote" class="btn btn-sm btn-primary" >Tambah Artikel</button></a>
+                </div>
+
                 <div class="row">
                     <?php
                     foreach ($data_artikel as $index => $value) {
@@ -110,7 +113,7 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="detail.php?id_artikel=<?php echo $value['id_artikel'] ?>"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                                        <a href="artikel.php?id_artikel=<?php echo $value['id_artikel'] ?>"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
                                         <a href="update.php?id_artikel=<?php echo $value['id_artikel'] ?>"><button type="button" id="edit-detail" class="btn btn-sm btn-outline-primary">Edit</button></a>
                                         <a href="hapus.php?id_artikel=<?php echo $value['id_artikel'] ?>"><button type="button" id="delete-quote" class="btn btn-sm btn-outline-danger">Delete</button></a>
                                     </div>
@@ -122,7 +125,7 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
                     ?>
                 </div>
             </div>
-        </body>
+                </main>
         <footer>
             <p>CABEQU &#169; 2021</p>
         </footer>

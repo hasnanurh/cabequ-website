@@ -93,7 +93,7 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
             </nav>
         </header>
 
-        <body>
+        <main>
             <h1>Hello, <?php echo $_SESSION['username']; ?></h1>
             <a href="logout.php">Logout</a>
 
@@ -124,7 +124,7 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
                 <a href="home_admin.php"><input type="button" value="Batal"></a>
             </form>
 
-        </body>
+        </main>
         <footer>
             <p>CABEQU &#169; 2021</p>
         </footer>

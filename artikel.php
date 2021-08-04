@@ -1,6 +1,9 @@
 <?php
 session_start();
 include "koneksi.php";
+$idArtikel = $_GET["id_artikel"];
+$qartikel = "select * from artikel where id_artikel = $idArtikel";
+$data_artikel = $conn->query($qartikel);
 
 if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
 
@@ -87,30 +90,18 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
         </header>
 
         <main>
-            <h1>Hello, <?php echo $_SESSION['username']; ?></h1>
-            <a href="logout.php">Logout</a>
-
-            <form method="post" action="proses_tambah.php" enctype="multipart/form-data">
-                <table cellpadding="8">
-                    <tr>
-                        <td>Judul</td>
-                        <td><input type="text" name="judul"></td>
-                    </tr>
-                    <tr>
-                        <td>Isi</td>
-                        <td><input type="text" name="isi"></td>
-                    </tr>
-                    <tr>
-                        <td>Pilih Gambar:</td>
-                        <td><input type="file" name="gambar_contoh" id="gambar_contoh">
-                        </td>
-                    </tr>
-                </table>
-                <input type="submit" name="submit" value="simpan">
-                <a href="home_admin.php"><input type="button" value="Batal"></a>
-            </form>
-
-        </main>
+            <div class="container" style="text-align: center;">
+                <?php
+                foreach ($data_artikel as $index => $value) {
+                ?>
+                    <h1 style="padding-top: 50px; padding-bottom:20px;"><?php echo $value['judul'] ?></h1>
+                    <img src="uploads/<?php echo $value['gambar'] ?>" style="max-width: 300px; padding-bottom:20px;">
+                    <p style="color: black; text-align:justify; padding-bottom:20px; "><?php echo $value['isi'] ?></p>
+                <?php
+                }
+                ?>
+            </div>
+            </main>
         <footer>
             <p>CABEQU &#169; 2021</p>
         </footer>
