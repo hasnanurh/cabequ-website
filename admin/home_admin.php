@@ -89,14 +89,13 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
         </header>
 
         <main>
-            <h1>Hello, <?php echo $_SESSION['username']; ?></h1>
-            <a href="logout.php">Logout</a>
-            <br>
-
-            <div class="container pt-5 ">
-
-                <div class="add" style="padding-bottom: 20px;">
-                    <a href="create.php"><button type="button" id="delete-quote" class="btn btn-sm btn-primary">Tambah Artikel</button></a>
+            <div class="container">
+                <div class="position-relative m-5">
+                    <h3 class="position-absolute top-0 start-0">Hello, <?php echo $_SESSION['username']; ?></h3>
+                    <a class="position-absolute top-0 start-100" href="logout.php"><button type="button" class="btn btn-sm btn-outline-danger">Logout</button></a>
+                </div>
+                <div class="add" style="padding-bottom: 20px; padding-top:100px;">
+                    <a href="create.php"><button type="button" class="btn btn-sm btn-primary">Tambah Artikel</button></a>
                 </div>
 
                 <div class="row">
