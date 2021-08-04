@@ -87,9 +87,7 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
         </header>
 
         <main>
-            <div class="container pb-5">
-                <h1>Hello, <?php echo $_SESSION['username']; ?></h1>
-                <a href="logout.php">Logout</a>
+            <div class="container mt-5 mb-5">
                 <h4 class="mb-3">Input Data</h4>
                 <form method="post" action="proses_tambah.php" enctype="multipart/form-data">
                     <div class="mb-3">
