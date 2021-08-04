@@ -105,9 +105,9 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
                         <div class="col-md-4">
 
                             <div class="card shadow p-3 mb-4 bg-body" style="width: 18rem;">
-                                <img src="../uploads/<?php echo $value['gambar']; ?>" class="card-img-top">
+                                <img src="../uploads/<?php echo $value['gambar']; ?>" class="card-img-top" style="height: 150px; width:max-content; border-radius:0;">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?php echo $value['judul'] ?></h5>
+                                    <h5 class="card-title"><?php echo substr($value['judul'], 0, 50) ?></h5>
                                     <p class="card-text"><?php echo substr($value['isi'], 0, 70) ?></p>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
