@@ -70,6 +70,9 @@
                             <a class="nav-link active" aria-current="page" href="diagnosis.php">Diagnosis</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="artikel.php">Artikel</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="about_chili.php">About Chilli</a>
                         </li>
                         <li class="nav-item">
