@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "db_cabequ";
+$username = "ifscxyz1_18102124";
+$password = "zSzxudZgoHwW";
+$dbname = "ifscxyz1_covana";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
